@@ -136,3 +136,26 @@ class Customer {
 ```
 
 ### Use Searchable Names
+My personal preference is that single-letter names can ONLY be used as local variables inside short methods. *The length of a name should correspond to the size of its scope*.
+
+If a variable or constant might be seen or used in multiple places in a body of code, it is imperative to give it a search-friendly name.
+
+**bad code**:
+```java
+for (int j = 0; j < 34; j++)
+    s += (t[j] * 4) / 5;
+```
+
+**good code**:
+```java
+int realDaysPerIdealDay = 4;
+final int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j = 0; j < NUMBER_OF_TASKS; j++) {
+    int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+    int readlTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);
+    sum += readlTaskWeeks;
+}
+```
+
+### Avoid Encodings
