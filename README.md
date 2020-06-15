@@ -262,7 +262,76 @@ The name `AccountVisitor` means a great deal to a programmer who is familiar wit
 When there is no "programmer-ees" for what you're doing, use the name from the problem domain. At least the programmer who maintains your code can ask a domain expert what is means.
 
 ### Add Meaningful Context
+There are a few names which are meaningful in an of themselves - most are not. Instead, you need to place names in context for your reader enclosing them in well-names classes, functions, or namespaces. When all else fails, then prefixing the name may be necessary as a last resort.
 
+Imagine that you have variables named `firstName`, `lastName`, `street`, `houseNumber`, `city`, `state`, and `zipcode`. Taken together it's pretty clear that they form an address.
+
+You can add context by using prefixes: `addrFirstName`, `addrLastName`, `addrState`, and so on. At least readers will understand that these variables are part of a larger structure. Of course, a better solution is to create a class named `Address`. Then, even the compiler knows that the variables belong to a bigger concept.
+
+**bad code**:
+```java
+private void printGuessStatistics(char candidate, int count) {
+    String number;
+    String verb;
+    String pluralModifier;
+    if (count == 0) {
+        number = "no";
+        verb = "are";
+        pluralModifier = "s";
+    } else if (count == 1) {
+        number = "1";
+        verb = "is";
+        pluralModifier = "";
+    } else {
+        number = Integer.toString(count);
+        verb = "are";
+        pluralModifier = "s";
+    }
+    String guessMessage = String.format("There %s %s %s%s", verb, number, candidate, pluralModifier);
+    print(guessMessage);
+}
+```
+
+**good code**:
+```java
+public class GuessStatisticsMessage {
+    private String number;
+    private String verb;
+    private String pluralModifier;
+
+    public String make(char candidate, int count) {
+        createPluralDependentMessageParts(count);
+        return String.format("There %s %s %s%s", verb, number, candidate, pluralModifier);
+    }
+
+    private void createPluralDependentMessageParts(int count) {
+        if (count == 0) {
+            thereAreNoLetters();
+        } else if (count == 1) {
+            thereIsOneLetter();
+        } else {
+            thereAreManyLetters(count);
+        }
+    }
+
+    private void thereAreManyLetters(int count) {
+        number = Integer.toString(count);
+        verb = "are"; pluralModifier = "s";
+    }
+
+    private void thereIsOneLetter() {
+        number = "1";
+        verb = "is";
+        pluralModifier = "";
+    }
+
+    private void thereAreNoLetters() {
+        number = "no";
+        verb = "are";
+        pluralModifier = "s";
+    }
+}
+```
 
 ### Don't Add Gratuitous Context
 
