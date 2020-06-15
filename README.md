@@ -259,7 +259,7 @@ Remember that the people who read your code will be programmers. So go ahead and
 The name `AccountVisitor` means a great deal to a programmer who is familiar with the *VISITOR* pattern.
 
 ### Use Problem Domain Names
-
+When there is no "programmer-ees" for what you're doing, use the name from the problem domain. At least the programmer who maintains your code can ask a domain expert what is means.
 
 ### Add Meaningful Context
 
