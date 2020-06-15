@@ -115,3 +115,24 @@ getActiveAccountInfo();
 How are the programmers in this project supposed to know which of these functions to call.
 
 ### Use Pronounceable Names
+If you can't pronounce it, you can't discuss it without sounding like an idiot.
+
+**bad code**:
+```java
+class DtaRcrd102 {
+    private Date genymdhms; // generation date, year, month, day, hour, minute and second
+    private Date modymdhms;
+    private final String pszqint = "102";
+}
+```
+
+**good code**:
+```java
+class Customer {
+    private Date generationTimestamp;
+    private Date modificationTimestamp;
+    private final String recordId = "102";
+}
+```
+
+### Use Searchable Names
