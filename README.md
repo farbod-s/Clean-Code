@@ -174,7 +174,28 @@ PhoneNumber phoneString; // name not changed when type changed!
 ```
 
 ### Member Prefixes
+You also don't need to prefix member variables with `m_` anymore.
 
+**bad code**:
+
+```java
+public class Part {
+    private String m_desc; // The textual description
+    void setName(String name) {
+        m_desc = name;
+    }
+}
+```
+
+**good code**:
+```java
+public class Part {
+    String description;
+    void setDescription(String description) {
+        this.description = description;
+    }
+}
+```
 
 ### Interfaces and Implementations
 
