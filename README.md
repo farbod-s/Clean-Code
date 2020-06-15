@@ -249,7 +249,9 @@ Likewise, it's confusing to have a `controller` and a `manager` and a `driver` i
 > A consistent lexicon is a great boon to the programmers who must use your code.
 
 ### Don't Pun
+Avoid using the same word for two purposes. Using the same term for two different ideas is essentially a pun.
 
+Let's say we have many classes where `add` will create a new value by adding or concatenating two existing values. Now let's say we are writing a new class that has amethod that puts its single parameter into a collection, so we should use a name like `insert` or `append` instead. To call the new method `add` would be a pun.
 
 ### Use Solution Domain Names
 
