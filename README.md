@@ -254,7 +254,9 @@ Avoid using the same word for two purposes. Using the same term for two differen
 Let's say we have many classes where `add` will create a new value by adding or concatenating two existing values. Now let's say we are writing a new class that has amethod that puts its single parameter into a collection, so we should use a name like `insert` or `append` instead. To call the new method `add` would be a pun.
 
 ### Use Solution Domain Names
+Remember that the people who read your code will be programmers. So go ahead and use computer science (CS) terms, algorithm names, pattern names, math terms, and so forth.
 
+The name `AccountVisitor` means a great deal to a programmer who is familiar with the *VISITOR* pattern.
 
 ### Use Problem Domain Names
 
