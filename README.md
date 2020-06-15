@@ -335,4 +335,9 @@ public class GuessStatisticsMessage {
 ```
 
 ### Don't Add Gratuitous Context
+In an imaginary application called "Gas Station Deluxe", it's a bad isea to prefix every class with `GSD`.
+
+> Shorter names are generally better than longer ones, so long as they are clear. Add no more context to a name than is necessary.
+
+The names `accountAddress` and `customerAddress` are fine names for instances of the class `Address` but could be poor names for classes. `Address` is a fine name for a class. If I need to differentiate between MAC addresses, port addresses, and Web addresses, I might consider `PostalAddress`, `MAC`, and `URI`. the resulting names are more precise, which is the point of all naming.
 
