@@ -237,7 +237,9 @@ Complex fulcrumPoint = new Complex(23.0);
 Consider enforcing their use by making the corresponding constructors private.
 
 ### Don't Be Cute
+Choose clarity over entertainment value. For example. don't use the name `whack()` to mean `kill()`. Don't tell little culture-dependent jokes like `eatMyShorts()` to mean `abort()`.
 
+> Say what you mean. Mean what you say.
 
 ### Pick One Word Per Concept
 
