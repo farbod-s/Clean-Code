@@ -242,7 +242,11 @@ Choose clarity over entertainment value. For example. don't use the name `whack(
 > Say what you mean. Mean what you say.
 
 ### Pick One Word Per Concept
+Pick one word for one abstract concept and stick with it. For instance, it's confusing to have `fetch`, `retrieve` and `get` as equivalent methods of different classes.
 
+Likewise, it's confusing to have a `controller` and a `manager` and a `driver` in the same code base.
+
+> A consistent lexicon is a great boon to the programmers who must use your code.
 
 ### Don't Pun
 
