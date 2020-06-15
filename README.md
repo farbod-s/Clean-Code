@@ -136,7 +136,9 @@ class Customer {
 ```
 
 ### Use Searchable Names
-My personal preference is that single-letter names can ONLY be used as local variables inside short methods. *The length of a name should correspond to the size of its scope*.
+My personal preference is that single-letter names can ONLY be used as local variables inside short methods.
+
+> The length of a name should correspond to the size of its scope.
 
 If a variable or constant might be seen or used in multiple places in a body of code, it is imperative to give it a search-friendly name.
 
@@ -159,3 +161,6 @@ for (int j = 0; j < NUMBER_OF_TASKS; j++) {
 ```
 
 ### Avoid Encodings
+Encoded names are seldom pronounceable and are easy to mis-type.
+
+### Hungarian Notation
