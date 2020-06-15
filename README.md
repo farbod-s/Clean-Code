@@ -316,7 +316,8 @@ public class GuessStatisticsMessage {
 
     private void thereAreManyLetters(int count) {
         number = Integer.toString(count);
-        verb = "are"; pluralModifier = "s";
+        verb = "are";
+        pluralModifier = "s";
     }
 
     private void thereIsOneLetter() {
