@@ -201,10 +201,12 @@ public class Part {
 I prefer to leave interfaces unadorned. So if I must encode either the interface or the implementation, I choose the implementation. Calling it `ShapeFactoryImp`, or even the hideous `CShapeFactory`, is preferable to encoding the interface.
 
 ### Avoid Mental Mapping
+This is a problem with single-letter variable names. Certainly a loop counter may be named `i` or `j` or `k` if its scope is very small and no other names can conflict with it. This is because those single-letter names for loop counters are traditional. However, in most other contexts a single-letter name is a poor choice; it's just a placeholder that the reader must mentally map to the actual concept. There can be no worse reason for using the name `c` than because `a` and `b` were already taken.
 
+> One different between a smart programmer and a professional programmer is that the professional understands that *clarity is king*. Professionals use their powers for good and write code that others can understand.
 
 ### Class Names
-
+Classes and objects should have noun or noun phrase names like `Customer`, `WikiPage`, `Account` and `AddressParser`. Avoid words like `Manager`, `Processor`, `Data`, or `Info` in the name of a class. A class name should not be a verb.
 
 ### Method Names
 
