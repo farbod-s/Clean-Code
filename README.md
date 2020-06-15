@@ -69,4 +69,19 @@ public List<Cell> getFlaggedCells() {
 ```
 
 ### Avoid Disinformation
+Do not refer to a grouping of accounts as an `accountList` unless it's actually a `List`. If the container holding the accounts is not actually a `List`, it may lead to false conclusions. So `accountGroup` or `bunchOfAccounts` or just plain `accounts` would be better.
 
+Beware of using names which vary in small ways for example `XYZControllerForEfficientHandlerOfStrings` and `XYZControllerForEfficientStorageOfStrings`.
+
+A truly awful example of disinformative names would be the use of lower-case `L` or uppercase `O` as variable names, especialy in combination. The problem, of course, is that they look almost entirely like the constants one and zero.
+
+**bad code**:
+```java
+int a = 1;
+if (O == 1)
+    a = O1;
+else
+    l = 01;
+```
+
+### Make Meaningful Distinctions
