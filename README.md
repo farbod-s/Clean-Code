@@ -164,3 +164,47 @@ for (int j = 0; j < NUMBER_OF_TASKS; j++) {
 Encoded names are seldom pronounceable and are easy to mis-type.
 
 ### Hungarian Notation
+In days of old, compilers did not check types, so programmers needed a crutch to help them remember the types.
+
+In modern languages we have much richer type systems, and compilers remember and enforce the types, so programmers don't need type encoding.
+
+**bad code**:
+```java
+PhoneNumber phoneString; // name not changed when type changed!
+```
+
+### Member Prefixes
+
+
+### Interfaces and Implementations
+
+
+### Avoid Mental Mapping
+
+
+### Class Names
+
+
+### Method Names
+
+
+### Don't Be Cute
+
+
+### Pick One Word Per Concept
+
+
+### Don't Pun
+
+
+### Use Solution Domain Names
+
+
+### Use Problem Domain Names
+
+
+### Add Meaningful Context
+
+
+### Don't Add Gratuitous Context
+
