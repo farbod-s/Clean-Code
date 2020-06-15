@@ -85,3 +85,33 @@ else
 ```
 
 ### Make Meaningful Distinctions
+It is not sufficient to add number series or noise words, even though the compiler is satisfied. If names must be different, then they should also mean something different.
+
+Consider, for example, the truly hideous practice of creating a variable named `klass` just because the name `class` was used for something else.
+
+Number-series naming `(a1, a2, .. aN)` is the opposite of intentional naming.
+
+**bad code**:
+```java
+public static void copyChars(char[] a1, char[] a2) {
+    for (int i = 0; i < a1.length; i++)
+        a2[i] = a1[i];
+}
+```
+
+This function reads much better when `source` and `destination` are used for the argument names.
+
+Noise words are another meaningless distinction. Imagine that you have a `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made names different without making them mean anything different. `Info` and `Data` are indistinct noise words like `a`, `an`, and `the`.
+
+Noise words are redundant. The word `variable` should never appear in a variable name. The word `table` should never appear in a table name.
+
+**bad code**:
+```java
+getActiveAccount();
+getActiveAccounts();
+getActiveAccountInfo();
+```
+
+How are the programmers in this project supposed to know which of these functions to call.
+
+### Use Pronounceable Names
