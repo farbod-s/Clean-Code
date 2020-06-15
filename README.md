@@ -198,7 +198,7 @@ public class Part {
 ```
 
 ### Interfaces and Implementations
-
+I prefer to leave interfaces unadorned. So if I must encode either the interface or the implementation, I choose the implementation. Calling it `ShapeFactoryImp`, or even the hideous `CShapeFactory`, is preferable to encoding the interface.
 
 ### Avoid Mental Mapping
 
