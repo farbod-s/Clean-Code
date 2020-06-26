@@ -335,9 +335,49 @@ public class GuessStatisticsMessage {
 ```
 
 ### Don't Add Gratuitous Context
-In an imaginary application called "Gas Station Deluxe", it's a bad isea to prefix every class with `GSD`.
+In an imaginary application called "Gas Station Deluxe", it's a bad idea to prefix every class with `GSD`.
 
 > Shorter names are generally better than longer ones, so long as they are clear. Add no more context to a name than is necessary.
 
 The names `accountAddress` and `customerAddress` are fine names for instances of the class `Address` but could be poor names for classes. `Address` is a fine name for a class. If I need to differentiate between MAC addresses, port addresses, and Web addresses, I might consider `PostalAddress`, `MAC`, and `URI`. the resulting names are more precise, which is the point of all naming.
 
+## Chapter3: Functions
+
+### Small
+The first rule of functions is that they should be small. The second rule of functions is that *they should be smaller than that*.
+
+- Functions should hardly ever be 20 lines long.
+- Functions should be transparently obvious.
+- Each function tells a story.
+- Each function leads you to the next in a compelling order.
+
+**bad code**:
+```java
+public static String renderPageWithSetupsAndTeardowns(
+    PageData pageData, boolean isSuite
+) throws Exception {
+    boolean isTestPage = pageData.hasAttribute("Test");
+    if (isTestPage) {
+        WikiPage testPage = pageData.getWikiPage();
+        StringBuffer newPageContent = new StringBuffer();
+        includeSetupPages(testPage, newPageContent, isSuite);
+        newPageContent.append(pageData.getContent());
+        includeTeardownPages(testPage, newPageContent, isSuite);
+        pageData.setContent(newPageContent.toString());
+    }
+    return pageData.getHtml();
+}
+```
+
+**good code**:
+```java
+public static String renderPageWithSetupsAndTeardowns(
+    PageData pageData, boolean isSuite
+) throws Exception {
+    if (isTestPage(pageData))
+        includeSetupAndTeardownPages(pageData, isSuite);
+    return pageData.getHtml();
+}
+```
+
+### Blocks and Indenting
