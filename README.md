@@ -382,3 +382,14 @@ This implies that the blocks within `if` statements, `else` statements, `while` 
 This also implies that function should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two. This, of course, makes the functions easier to read and understand.
 
 ### Do One Thing
+
+> Functions should do one thing. They should do it well. They should do it only.
+
+If a function does only steps that are one level below the stated name of the function, then the function is doing one thing. After all, the reason we write functions is to decompose a larger concept (in other word, the name of the function) into a set of steps at the next level of abstraction.
+
+So, another way to know that a function is doing more than "one thing" is if you can extract another function from it with a name that is not merely a restatement of its implementation.
+
+#### Sections within Functions
+Functions that do one thing cannot be reasonably divided into sections.
+
+### One Level of Abstraction per Function
