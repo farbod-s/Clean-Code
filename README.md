@@ -353,9 +353,7 @@ The first rule of functions is that they should be small. The second rule of fun
 
 **bad code**:
 ```java
-public static String renderPageWithSetupsAndTeardowns(
-    PageData pageData, boolean isSuite
-) throws Exception {
+public static String renderPageWithSetupsAndTeardowns(PageData pageData, boolean isSuite) throws Exception {
     boolean isTestPage = pageData.hasAttribute("Test");
     if (isTestPage) {
         WikiPage testPage = pageData.getWikiPage();
@@ -371,9 +369,7 @@ public static String renderPageWithSetupsAndTeardowns(
 
 **good code**:
 ```java
-public static String renderPageWithSetupsAndTeardowns(
-    PageData pageData, boolean isSuite
-) throws Exception {
+public static String renderPageWithSetupsAndTeardowns(PageData pageData, boolean isSuite) throws Exception {
     if (isTestPage(pageData))
         includeSetupAndTeardownPages(pageData, isSuite);
     return pageData.getHtml();
@@ -381,3 +377,8 @@ public static String renderPageWithSetupsAndTeardowns(
 ```
 
 ### Blocks and Indenting
+This implies that the blocks within `if` statements, `else` statements, `while` statements, and so on should be one line long. Probably that line should be a function call. Not only does this keep the enclosing function small, but it also adds documentary value because the function called within the block can have a nicely descriptive name.
+
+This also implies that function should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two. This, of course, makes the functions easier to read and understand.
+
+### Do One Thing
